@@ -2,13 +2,15 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 interface AppButtonProps {
-  className ? : string;
-  dark ? : boolean;
+  className?: string;
+  dark?: boolean;
+  text?: string;
 }
 
-export const AppButton: React.FC < AppButtonProps > = ({
+export const AppButton: React.FC<AppButtonProps> = ({
   className = "",
-  dark = false
+  dark = false,
+  text = "Baixar agora"
 }) => {
   return (
     <button
@@ -19,11 +21,11 @@ export const AppButton: React.FC < AppButtonProps > = ({
       } ${className}`}
     >
       <span className="text-sm font-bold tracking-tight">
-        Baixar agora
+        {text}
       </span>
 
       <div
-        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 rotate-45 group-hover:rotate-0 ${
+        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 rotate-[-45deg] group-hover:rotate-0 ${
           dark
             ? "bg-white text-black"
             : "bg-zinc-900 text-white"
