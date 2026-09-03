@@ -12,23 +12,29 @@ export const Navbar: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const scrollPos = window.scrollY;
-      const heroElement = document.getElementById('hero');
-      const navHeight = 80;
-      
-      if (heroElement) {
-        const heroBottom = heroElement.offsetTop + heroElement.offsetHeight;
-        
-        setIsPastHero(scrollPos > heroBottom - navHeight / 2);
-        
-        setIsTransitioning(
-          scrollPos > heroBottom - navHeight && scrollPos < heroBottom
-        );
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPos = window.scrollY;
+          const heroElement = document.getElementById('hero');
+          const navHeight = 80;
+          
+          if (heroElement) {
+            const heroBottom = heroElement.offsetTop + heroElement.offsetHeight;
+            
+            setIsPastHero(scrollPos > heroBottom - navHeight / 2);
+            setIsTransitioning(
+              scrollPos > heroBottom - navHeight && scrollPos < heroBottom
+            );
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -42,11 +48,11 @@ export const Navbar: React.FC = () => {
   
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300`}
+      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300 ${
+        isTransitioning ? 'mix-blend-difference' : 'mix-blend-normal'
+      }`}
     >
-      <div className={`max-w-[1800px] mx-auto flex items-center justify-between transition-colors duration-300 ${
-        useDarkTheme ? 'text-black' : 'text-white'
-      }`}>
+      <div className="max-w-[1800px] mx-auto flex items-center justify-between">
 
         {/* Logo */}
         <div className="flex items-center">
@@ -54,7 +60,9 @@ export const Navbar: React.FC = () => {
             <img
               src={useDarkTheme ? logoBlack : logoWhite}
               alt="Logo"
-              className="w-full h-full object-contain"
+              className={`w-full h-full object-contain transition-all duration-200 ${
+                isTransitioning ? 'brightness-0 invert' : ''
+              }`}
             />
           </div>
         </div>
@@ -138,11 +146,11 @@ export const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 bg-zinc-950/40 backdrop-blur-3xl z-[105] flex flex-col border-l border-white/10 overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 bg-zinc-950/80 z-[105] flex flex-col border-l border-white/10 overflow-y-auto"
           >
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

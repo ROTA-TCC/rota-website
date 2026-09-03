@@ -19,7 +19,7 @@ export const AppButton: React.FC < AppButtonProps > = ({
       } ${className}`}
     >
       <span className="text-sm font-bold tracking-tight">
-        Baixar App
+        Baixar agora
       </span>
 
       <div
