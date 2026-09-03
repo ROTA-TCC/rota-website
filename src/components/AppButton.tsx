@@ -23,7 +23,7 @@ export const AppButton: React.FC < AppButtonProps > = ({
       </span>
 
       <div
-        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:rotate-45 ${
+        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 rotate-45 group-hover:rotate-0 ${
           dark
             ? "bg-white text-black"
             : "bg-zinc-900 text-white"
