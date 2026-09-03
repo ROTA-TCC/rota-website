@@ -3,8 +3,8 @@ import { Facebook, Instagram, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppButton } from './AppButton';
 
-import logoWhite from '../assets/logo.png';
-import logoBlack from '../assets/logoPreta.png';
+import logoWhite from '../assets/logo-branca.svg';
+import logoBlack from '../assets/logo-preta.svg';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

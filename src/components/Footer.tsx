@@ -1,5 +1,5 @@
 import React from 'react';
-import logoPreta from '../assets/logoPreta.svg';
+import logoPreta from '../assets/logo-preta.svg';
 
 
 export const Footer: React.FC = () => {
