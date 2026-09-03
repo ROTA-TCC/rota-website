@@ -79,9 +79,9 @@ export const Gallery = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden py-24">
+    <div className="w-full overflow-hidden pt-24 pb-32">
       <div 
-        className="flex items-center gap-4 md:gap-8 transition-transform duration-700 ease-in-out px-4 md:px-[10%]"
+        className="flex items-center gap-4 md:gap-8 transition-transform duration-700 ease-in-out"
         style={{ 
           transform: `translateX(${getOffset()}px)` 
         }}

@@ -1,0 +1,23 @@
+arrumar o momento que some a logo da cor anterior do rota para aparecer a logo da cor atual, fazer só desaparecer quando carregar.
+
+Aumentar o espaçamento de baixo do carrossel
+
+colocar todas imagens no repositório em vez de usar por cdn.
+
+na seção de "funcionalidades" colocar sombra no player.
+
+na seção "Como o Rota te move" diminuir a sombra.
+
+trocar as imagens por melhores.
+
+trocar os vídeos da seção "funcionalidades" por vídeos feitos para o TCC(vídeos de marketing)
+
+fazer os links de cada seção funcionar para levar em cada seção, e colocar a animação de ida como algo "suave".
+
+Verificar como otimizar o navbar do menu hambúrguer na animação de saída e de entrada, sem tirar o efeito de glassmorphismo
+
+Animar a seta com hover no card "Explore com o Rota!" do carrossel, a animação deve ser ele indo para frente considerado a 45 graus, deve ir para frente um pouco.
+
+Melhorar a animação de troca de imagens na seção "Como o Rota te move".
+
+Tirar a margem do carrossel.

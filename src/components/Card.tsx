@@ -48,7 +48,12 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
             <h3 className="text-sm md:text-base font-semibold text-brand-black leading-tight">
               {title}
             </h3>
-            <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-brand-black mt-0.5" />
+            <motion.div
+              whileHover={{ x: 5, y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-brand-black mt-0.5" />
+            </motion.div>
           </div>
           <p className="text-[10px] md:text-xs text-brand-paragraph max-w-[90%] leading-relaxed font-medium">
             {description}

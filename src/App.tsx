@@ -21,7 +21,7 @@ export default function App() {
 
 
       {/* Seção de Títulos e Conteúdo Central */}
-      <section className="min-h-screen bg-brand-white flex flex-col items-center px-4">
+      <section id="memorias" className="min-h-screen bg-brand-white flex flex-col items-center px-4">
         <nav className="w-full pt-30 pb-8 flex justify-center">
           <Badge text="novas memorias" />
         </nav>
@@ -37,7 +37,7 @@ export default function App() {
           <Gallery />
         </div>
         
-                <nav className="w-full py-8 flex justify-center">
+                <nav id="comunidade" className="w-full py-8 flex justify-center">
           <Badge text="comunidade" />
         </nav>
         
@@ -53,7 +53,7 @@ description = "Mais que um app de corrida, uma rede viva de atletas. Troque expe
       </section>
 
       {/* Vitrine de Funcionalidades */}
-      <section className="w-full">
+      <section id="funcionalidades" className="w-full">
                 <nav className="w-full py-8 flex justify-center">
           <Badge text="funcionalidades" />
         </nav>
@@ -68,7 +68,7 @@ description = "Esqueça a rotina e sinta a liberdade de cada quilômetro. Com ro
       </section>
 
       
-      <div className="w-full p-3 md:p-6 lg:p-8 my-8">
+      <div id="passos" className="w-full p-3 md:p-6 lg:p-8 my-8">
         <StepArea />
         </div>
         

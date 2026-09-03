@@ -78,7 +78,7 @@ export const StepArea: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
           {/* Left Side: Tour Card com Animação de Troca */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-brand-stroke shadow-2xl">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-brand-stroke shadow-lg">
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeStep}

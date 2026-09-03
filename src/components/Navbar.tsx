@@ -9,7 +9,6 @@ import logoBlack from '../assets/logo-preta.svg';
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   
   useEffect(() => {
     let ticking = false;
@@ -24,9 +23,6 @@ export const Navbar: React.FC = () => {
             const heroBottom = heroElement.offsetTop + heroElement.offsetHeight;
             
             setIsPastHero(scrollPos > heroBottom - navHeight / 2);
-            setIsTransitioning(
-              scrollPos > heroBottom - navHeight && scrollPos < heroBottom
-            );
           }
           ticking = false;
         });
@@ -44,13 +40,11 @@ export const Navbar: React.FC = () => {
   }, [isOpen]);
 
   const navLinks = ['Home', 'memorias', 'comunidade', 'funcionalidades', 'passos'];
-  const useDarkTheme = isPastHero && !isTransitioning;
+  const useDarkTheme = isPastHero;
   
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300 ${
-        isTransitioning ? 'mix-blend-difference' : 'mix-blend-normal'
-      }`}
+      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300`}
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
 
@@ -60,9 +54,7 @@ export const Navbar: React.FC = () => {
             <img
               src={useDarkTheme ? logoBlack : logoWhite}
               alt="Logo"
-              className={`w-full h-full object-contain transition-all duration-200 ${
-                isTransitioning ? 'brightness-0 invert' : ''
-              }`}
+              className={`w-full h-full object-contain transition-all duration-200`}
             />
           </div>
         </div>
