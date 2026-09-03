@@ -37,6 +37,7 @@ export const Navbar: React.FC = () => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
   }, [isOpen]);
 
+  const navLinks = ['Home', 'memorias', 'comunidade', 'funcionalidades', 'passos'];
   const useDarkTheme = isPastHero && !isTransitioning;
   
   return (
