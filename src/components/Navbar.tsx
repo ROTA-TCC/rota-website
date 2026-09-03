@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Facebook, Instagram, X } from 'lucide-react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppButton } from './AppButton';
 
@@ -33,7 +33,10 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const navLinks = ['Home', 'memorias', 'comunidade', 'funcionalidades', 'passos'];
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+  }, [isOpen]);
+
   const useDarkTheme = isPastHero && !isTransitioning;
   
   return (
@@ -87,7 +90,7 @@ export const Navbar: React.FC = () => {
         {/* Social + CTA */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-3 mr-4">
-            {[Facebook, Instagram, X].map((Icon, i) => (
+            {[Facebook, Instagram, Twitter].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
@@ -140,7 +143,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-zinc-950/40 backdrop-blur-3xl z-[105] flex flex-col border-l border-white/10"
+            className="fixed inset-0 bg-zinc-950/40 backdrop-blur-3xl z-[105] flex flex-col border-l border-white/10 overflow-y-auto"
           >
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -197,15 +200,9 @@ export const Navbar: React.FC = () => {
                   </span>
 
                   <div className="flex items-center gap-8">
-                    {['Facebook', 'Instagram', 'X'].map((social) => (
-                      <a
-                        key={social}
-                        href="#"
-                        className="text-sm font-semibold text-white hover:text-white/60 transition-colors"
-                      >
-                        {social}
-                      </a>
-                    ))}
+                    <a href="#" className="text-white hover:text-white/60 transition-colors"><Facebook size={24} /></a>
+                    <a href="#" className="text-white hover:text-white/60 transition-colors"><Instagram size={24} /></a>
+                    <a href="#" className="text-white hover:text-white/60 transition-colors"><Twitter size={24} /></a>
                   </div>
                 </motion.div>
 
