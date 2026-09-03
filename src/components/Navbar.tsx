@@ -42,11 +42,11 @@ export const Navbar: React.FC = () => {
   
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300 ${
-        isTransitioning ? 'mix-blend-difference' : 'mix-blend-normal'
-      }`}
+      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300`}
     >
-      <div className="max-w-[1800px] mx-auto flex items-center justify-between">
+      <div className={`max-w-[1800px] mx-auto flex items-center justify-between transition-colors duration-300 ${
+        useDarkTheme ? 'text-black' : 'text-white'
+      }`}>
 
         {/* Logo */}
         <div className="flex items-center">
@@ -54,9 +54,7 @@ export const Navbar: React.FC = () => {
             <img
               src={useDarkTheme ? logoBlack : logoWhite}
               alt="Logo"
-              className={`w-full h-full object-contain transition-all duration-200 ${
-                isTransitioning ? 'brightness-0 invert' : ''
-              }`}
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
