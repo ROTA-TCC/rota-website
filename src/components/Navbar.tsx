@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
                 }`}
               />
             </div>
-          </button>
+          </motion.button>
         </div>
       </div>
 

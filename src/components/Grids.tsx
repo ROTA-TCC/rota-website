@@ -54,18 +54,43 @@ function FeatureCard({ feature }: { feature: SocialFeature }) {
       viewport={{ once: true }}
       className="flex flex-col gap-3"
     >
+        <img 
+            src={feature.image.desktop} 
+            alt={feature.title}
+            className="h-full w-full object-cover transition-transform duration-500"
+            referrerPolicy="no-referrer"
+          />
+        </picture>
+      </div>
+      <div className="flex flex-col gap-1">
+        <h3 className="text-xl font-bold tracking-tight text-brand-black">{feature.title}</h3>
+        <p className="text-sm leading-relaxed text-brand-paragraph">{feature.description}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+function FeatureCard({ feature }: { feature: SocialFeature }) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileTap={{ scale: 0.98 }}
+      className="flex flex-col gap-3 cursor-pointer"
+    >
       {/* Container Aspect-Square para um visual moderno e consistente */}
       <div className="aspect-square overflow-hidden rounded-2xl bg-brand-foreground relative">
         <picture>
           {/* Serve a imagem leve para celular */}
-          <source media="(max-width: 768px)" srcset={feature.image.mobile} />
+          <source media="(max-width: 768px)" srcSet={feature.image.mobile} />
           {/* Serve a imagem nítida para desktop */}
-          <source media="(min-width: 769px)" srcset={feature.image.desktop} />
+          <source media="(min-width: 769px)" srcSet={feature.image.desktop} />
           {/* Fallback para navegadores sem suporte a picture */}
           <img 
             src={feature.image.desktop} 
             alt={feature.title}
-            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500"
             referrerPolicy="no-referrer"
           />
         </picture>

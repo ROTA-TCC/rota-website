@@ -9,12 +9,13 @@ interface FeatureButtonProps {
 
 export const FeatureButton: React.FC<FeatureButtonProps> = ({ title, isActive, onClick }) => {
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.95 }}
       onClick={onClick}
       className={`relative px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer font-sans
         ${isActive 
           ? 'text-brand-black' 
-          : 'text-brand-paragraph bg-transparent hover:text-brand-black'
+          : 'text-brand-paragraph bg-transparent'
         }`}
     >
       {/* Background animado para a transição de estado ativo */}
