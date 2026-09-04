@@ -44,11 +44,11 @@ export const Footer: React.FC = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-wrap items-center gap-[1.5rem] md:gap-[2.5rem] mb-[3rem]">
-          <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">hero</a>
-          <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">novas memórias</a>
-          <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">comunidade</a>
-          <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">funcionalidades</a>
-          <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">passos</a>
+          <a href="#hero" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">hero</a>
+          <a href="#memorias" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">novas memórias</a>
+          <a href="#comunidade" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">comunidade</a>
+          <a href="#funcionalidades" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">funcionalidades</a>
+          <a href="#passos" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">passos</a>
           <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">baixe agora</a>
         </div>
 

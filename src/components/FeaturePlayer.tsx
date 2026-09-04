@@ -16,7 +16,7 @@ export const FeaturePlayer: React.FC<FeaturePlayerProps> = ({ mediaUrl }) => {
   }, [mediaUrl, isGif]);
 
   return (
-    <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
+    <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-md">
       <AnimatePresence mode="wait">
         <motion.div
           key={mediaUrl}
