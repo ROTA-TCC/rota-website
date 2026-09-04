@@ -9,7 +9,7 @@ interface CarouselControlsProps {
 
 export const CarouselControls = ({ onPrev, onNext, progress }: CarouselControlsProps) => {
   return (
-    <div className="flex items-center justify-center gap-8 mt-16 ml-1 pb-16 pt-8 md:pt-16">
+    <div className="flex items-center justify-center gap-8 mt-24 ml-0 pb-16 pt-8 md:pt-16">
       <motion.button 
         whileTap={{ scale: 0.95 }}
         onClick={onPrev}
