@@ -32,7 +32,6 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
       } ${isActive ? 'opacity-100' : 'opacity-60'} ${offsetClasses[offset]}`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      whileTap={{ scale: 0.95 }}
     >
       <div className="w-full h-full rounded-[24px] md:rounded-[32px] overflow-hidden mb-5">
         <img 
