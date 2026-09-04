@@ -43,13 +43,18 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
       </div>
 
       {title && description && (
-        <div className="w-full px-1">
+        <motion.div 
+          className="w-full px-1"
+          whileHover="hover"
+        >
           <div className="flex justify-between items-start mb-1">
             <h3 className="text-sm md:text-base font-semibold text-brand-black leading-tight">
               {title}
             </h3>
             <motion.div
-              whileHover={{ x: 5, y: -5 }}
+              variants={{
+                hover: { x: 5, y: -5 }
+              }}
               transition={{ duration: 0.2 }}
             >
               <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-brand-black mt-0.5" />
@@ -58,7 +63,7 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
           <p className="text-[10px] md:text-xs text-brand-paragraph max-w-[90%] leading-relaxed font-medium">
             {description}
           </p>
-        </div>
+        </motion.div>
       )}
     </motion.div>
   );
