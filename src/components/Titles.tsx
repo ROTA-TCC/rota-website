@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Titles = ({ title, spanTitle, nextTitle, description }: HeroProps) => {
   return (
-    <div className="text-center max-w-4xl mx-auto">
+    <div className="text-center max-w-4xl mx-auto px-4 md:px-0">
       <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-brand-black mb-6 leading-[1.15] font-normal">
         {title} <span className="text-brand-paragraph italic">{spanTitle}</span>
         <br />
