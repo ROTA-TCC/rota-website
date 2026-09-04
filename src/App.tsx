@@ -21,7 +21,7 @@ export default function App() {
 
 
       {/* Seção de Títulos e Conteúdo Central */}
-      <section id="memorias" className="min-h-screen bg-brand-white flex flex-col items-center px-4">
+      <section id="memorias" className="min-h-screen bg-brand-white flex flex-col items-center">
         <nav className="w-full pt-30 pb-8 flex justify-center">
           <Badge text="novas memorias" />
         </nav>
