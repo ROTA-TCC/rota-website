@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface CarouselControlsProps {
   onPrev: () => void;
@@ -8,13 +9,14 @@ interface CarouselControlsProps {
 
 export const CarouselControls = ({ onPrev, onNext, progress }: CarouselControlsProps) => {
   return (
-    <div className="flex items-center justify-center gap-8 mt-24 ml-12 pb-16 pt-8 md:pt-16">
-      <button 
+    <div className="flex items-center justify-center gap-8 mt-24 ml-6 pb-16 pt-8 md:pt-16">
+      <motion.button 
+        whileTap={{ scale: 0.95 }}
         onClick={onPrev}
-        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground active:bg-brand-ground transition-colors"
+        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground transition-colors"
       >
         <ArrowLeft className="w-4 h-4 text-brand-black" />
-      </button>
+      </motion.button>
 
       <div className="w-46 h-[2px] bg-brand-stroke relative overflow-hidden">
         <div 
@@ -23,12 +25,13 @@ export const CarouselControls = ({ onPrev, onNext, progress }: CarouselControlsP
         />
       </div>
 
-      <button 
+      <motion.button 
+        whileTap={{ scale: 0.95 }}
         onClick={onNext}
-        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground active:bg-brand-ground transition-colors"
+        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground transition-colors"
       >
         <ArrowRight className="w-4 h-4 text-brand-black" />
-      </button>
+      </motion.button>
     </div>
   );
 };

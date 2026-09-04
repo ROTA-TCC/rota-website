@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface AppButtonProps {
   className?: string;
@@ -11,11 +12,12 @@ export const AppButton: React.FC<AppButtonProps> = ({
   dark = false
 }) => {
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.95 }}
       className={`group flex items-center gap-3 p-1.5 pl-8 rounded-full transition-all duration-300 shadow-xl ${
         dark
-          ? "bg-black text-white hover:bg-zinc-900 active:bg-zinc-900"
-          : "bg-white text-black hover:bg-zinc-100 active:bg-zinc-100"
+          ? "bg-black text-white hover:bg-zinc-900"
+          : "bg-white text-black hover:bg-zinc-100"
       } ${className}`}
     >
       <span className="text-sm font-bold tracking-tight">
@@ -31,6 +33,6 @@ export const AppButton: React.FC<AppButtonProps> = ({
       >
         <ArrowUpRight size={24} strokeWidth={2.5} />
       </div>
-    </button>
+    </motion.button>
   );
 };
