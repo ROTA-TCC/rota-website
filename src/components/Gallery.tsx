@@ -79,7 +79,7 @@ export const Gallery = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden pt-24 pb-32 mb-12 -mx-4 md:-mx-8">
+    <div className="w-full overflow-hidden pt-24 pb-32 mb-12 -mx-4 md:-mx-8 mr-0">
       <div 
         className="flex items-center gap-4 md:gap-8 transition-transform duration-700 ease-in-out px-4 md:px-8"
         style={{ 

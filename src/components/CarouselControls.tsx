@@ -8,10 +8,10 @@ interface CarouselControlsProps {
 
 export const CarouselControls = ({ onPrev, onNext, progress }: CarouselControlsProps) => {
   return (
-    <div className="flex items-center justify-center gap-8 mt-12 pb-16 pt-8 md:pt:16">
+    <div className="flex items-center justify-center gap-8 mt-24 ml-12 pb-16 pt-8 md:pt-16">
       <button 
         onClick={onPrev}
-        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground transition-colors"
+        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground active:bg-brand-ground transition-colors"
       >
         <ArrowLeft className="w-4 h-4 text-brand-black" />
       </button>
@@ -25,7 +25,7 @@ export const CarouselControls = ({ onPrev, onNext, progress }: CarouselControlsP
 
       <button 
         onClick={onNext}
-        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground transition-colors"
+        className="w-10 h-10 rounded-full border border-brand-stroke flex items-center justify-center hover:bg-brand-ground active:bg-brand-ground transition-colors"
       >
         <ArrowRight className="w-4 h-4 text-brand-black" />
       </button>

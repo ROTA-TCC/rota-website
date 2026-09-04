@@ -27,7 +27,7 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
   
   return (
     <motion.div 
-      className={`relative flex-shrink-0 transition-all duration-500 ease-out ${
+      className={`relative flex-shrink-0 transition-all duration-500 ease-out active:scale-95 ${
         sizeClasses[size]
       } ${isActive ? 'opacity-100' : 'opacity-60'} ${offsetClasses[offset]}`}
       initial={{ opacity: 0, scale: 0.95 }}

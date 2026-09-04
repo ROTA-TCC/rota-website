@@ -13,9 +13,9 @@ export const Button = ({ children, variant = "primary", className = "", onClick 
   const baseStyles = "flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300";
   
   const variants = {
-    primary: "bg-white text-brand-black hover:bg-opacity-90",
-    outline: "border border-white/30 text-white hover:bg-white/10 backdrop-blur-md",
-    ghost: "text-white hover:bg-white/10",
+    primary: "bg-white text-brand-black hover:bg-opacity-90 active:bg-opacity-90",
+    outline: "border border-white/30 text-white hover:bg-white/10 active:bg-white/10 backdrop-blur-md",
+    ghost: "text-white hover:bg-white/10 active:bg-white/10",
   };
   
   return (

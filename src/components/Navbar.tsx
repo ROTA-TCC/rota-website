@@ -122,7 +122,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden relative z-[110] w-10 h-10 flex flex-col items-center justify-center"
+            className="md:hidden relative z-[110] w-10 h-10 flex flex-col items-center justify-center active:scale-95 transition-transform"
           >
             <div className="relative w-5 h-2 flex flex-col justify-between">
               <motion.span
