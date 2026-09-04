@@ -52,30 +52,6 @@ function FeatureCard({ feature }: { feature: SocialFeature }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="flex flex-col gap-3"
-    >
-        <img 
-            src={feature.image.desktop} 
-            alt={feature.title}
-            className="h-full w-full object-cover transition-transform duration-500"
-            referrerPolicy="no-referrer"
-          />
-        </picture>
-      </div>
-      <div className="flex flex-col gap-1">
-        <h3 className="text-xl font-bold tracking-tight text-brand-black">{feature.title}</h3>
-        <p className="text-sm leading-relaxed text-brand-paragraph">{feature.description}</p>
-      </div>
-    </motion.div>
-  );
-}
-
-function FeatureCard({ feature }: { feature: SocialFeature }) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
       whileTap={{ scale: 0.98 }}
       className="flex flex-col gap-3 cursor-pointer"
     >
@@ -126,8 +102,8 @@ export default function CommunityGrids({
             className="relative h-full min-h-[500px] w-full overflow-hidden rounded-2xl bg-brand-foreground lg:col-span-5"
           >
             <picture>
-              <source media="(max-width: 768px)" srcset={featuredImage.mobile} />
-              <source media="(min-width: 769px)" srcset={featuredImage.desktop} />
+              <source media="(max-width: 768px)" srcSet={featuredImage.mobile} />
+              <source media="(min-width: 769px)" srcSet={featuredImage.desktop} />
               <img 
                 src={featuredImage.desktop} // Fallback
                 alt="Comunidade de Corredores"
