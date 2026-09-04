@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface FeatureButtonProps {
   title: string;
@@ -27,8 +27,8 @@ export const FeatureButton: React.FC<FeatureButtonProps> = ({ title, isActive, o
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
         />
       )}
-      
+
       <span className="relative z-10">{title}</span>
-    </button>
+    </motion.button>
   );
 };
