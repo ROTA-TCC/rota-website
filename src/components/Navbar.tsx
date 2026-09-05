@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <div
-          className={`hidden md:flex items-center gap-1 border rounded-full px-2 py-1.5 transition-all duration-300 ${
+          className={`hidden md:flex items-center gap-1 border rounded-full px-2 py-1.5 ${
             useDarkTheme
               ? 'bg-black/5 border-black/10'
               : 'bg-white/10 border-white/10 backdrop-blur-md'
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`px-6 py-2 rounded-full text-[13px] font-bold transition-colors ${
+              className={`px-6 py-2 rounded-full text-[13px] font-bold ${
                 idx === 0
                   ? useDarkTheme
                     ? 'bg-black text-white'
@@ -101,7 +101,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={i}
                 href="#"
-                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
+                className={`w-10 h-10 rounded-full border flex items-center justify-center ${
                   useDarkTheme
                     ? 'border-black/10 text-black hover:bg-black hover:text-white'
                     : 'border-white/10 text-white hover:bg-white hover:text-black'
