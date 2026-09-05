@@ -115,7 +115,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:block">
             <AppButton
               dark={useDarkTheme}
-              className="scale-90 origin-right transition-all duration-500"
+              className="scale-90 origin-right"
             />
           </div>
 
