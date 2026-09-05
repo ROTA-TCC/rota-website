@@ -48,8 +48,8 @@ export const Navbar: React.FC = () => {
   
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 transition-all duration-300 ${
-        isTransitioning ? 'mix-blend-difference' : 'mix-blend-normal'
+      className={`fixed top-0 left-0 w-full z-[100] px-6 py-6 md:px-10 ${
+        isTransitioning ? 'mix-blend-difference' : ''
       }`}
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
             <img
               src={useDarkTheme ? logoBlack : logoWhite}
               alt="Logo"
-              className={`w-full h-full object-contain transition-all duration-200 ${
+              className={`w-full h-full object-contain ${
                 isTransitioning ? 'brightness-0 invert' : ''
               }`}
             />
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`px-6 py-2 rounded-full text-[13px] font-bold transition-all ${
+              className={`px-6 py-2 rounded-full text-[13px] font-bold transition-colors ${
                 idx === 0
                   ? useDarkTheme
                     ? 'bg-black text-white'
