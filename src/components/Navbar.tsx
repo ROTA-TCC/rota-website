@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { AppButton } from './AppButton';
 
 import logoWhite from '../assets/logo-branca.svg';
@@ -11,12 +11,18 @@ export const Navbar: React.FC = () => {
   const [isPastHero, setIsPastHero] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
+  const isClickingRef = useRef(false);
 
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
+          if (isClickingRef.current) {
+            ticking = false;
+            return;
+          }
+          
           const scrollPos = window.scrollY;
           const heroElement = document.getElementById('hero');
           const navHeight = 80;
@@ -34,7 +40,7 @@ export const Navbar: React.FC = () => {
           const sections = ['hero', 'memorias', 'comunidade', 'funcionalidades', 'passos'];
           for (const sectionId of sections) {
               const element = document.getElementById(sectionId);
-              if (element && scrollPos >= element.offsetTop - navHeight - 100) {
+              if (element && scrollPos >= element.offsetTop - navHeight - 150) {
                   setActiveLink(sectionId === 'hero' ? 'Home' : sectionId);
               }
           }
@@ -48,6 +54,14 @@ export const Navbar: React.FC = () => {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  const handleLinkClick = (item: string) => {
+    setActiveLink(item);
+    isClickingRef.current = true;
+    setTimeout(() => {
+        isClickingRef.current = false;
+    }, 1000); // Wait for scroll animation to likely finish
+  };
   
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
@@ -70,7 +84,7 @@ export const Navbar: React.FC = () => {
             className="w-10 h-10 flex items-center justify-center overflow-hidden cursor-pointer"
             onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                setActiveLink('Home');
+                handleLinkClick('Home');
             }}
           >
             <img
@@ -95,7 +109,7 @@ export const Navbar: React.FC = () => {
             <a
               key={item}
               href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
-              onClick={() => setActiveLink(item)}
+              onClick={() => handleLinkClick(item)}
               className={`relative px-6 py-2 rounded-full text-[13px] font-bold transition-colors ${
                   activeLink === item
                     ? ''
