@@ -15,6 +15,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
       className={`group flex items-center gap-3 p-1.5 pl-8 rounded-full shadow-xl ${
         dark
           ? "bg-black text-white hover:bg-zinc-900"
