@@ -26,15 +26,16 @@ export const AppButton: React.FC<AppButtonProps> = ({
         Baixar App
       </span>
 
-      <div
-        className={`w-12 h-12 rounded-full flex items-center justify-center group-hover:rotate-45 ${
+      <motion.div
+        whileHover={{ rotate: 45 }}
+        className={`w-12 h-12 rounded-full flex items-center justify-center ${
           dark
             ? "bg-white text-black"
             : "bg-zinc-900 text-white"
         }`}
       >
         <ArrowUpRight size={24} strokeWidth={2.5} />
-      </div>
+      </motion.div>
     </motion.button>
   );
 };

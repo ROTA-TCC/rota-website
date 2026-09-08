@@ -52,7 +52,6 @@ export const Footer: React.FC = () => {
           <a href="#comunidade" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">comunidade</a>
           <a href="#funcionalidades" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">funcionalidades</a>
           <a href="#passos" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">passos</a>
-          <a href="#" className="text-brand-paragraph font-bold text-[1rem] hover:text-brand-black transition-colors">baixe agora</a>
         </div>
 
         {/* App Section - Mobile Only (Alterado para flex-col) */}
