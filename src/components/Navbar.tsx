@@ -56,7 +56,6 @@ export const Navbar: React.FC = () => {
   }, []);
   
   const handleLinkClick = (item: string) => {
-    setActiveLink(item);
     isClickingRef.current = true;
     setTimeout(() => {
         isClickingRef.current = false;
