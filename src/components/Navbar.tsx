@@ -10,7 +10,8 @@ export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
+  const [activeLink, setActiveLink] = useState('Home');
+
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
@@ -27,6 +28,15 @@ export const Navbar: React.FC = () => {
             setIsTransitioning(
               scrollPos > heroBottom - navHeight && scrollPos < heroBottom
             );
+          }
+          
+          // Simple active link detection
+          const sections = ['hero', 'memorias', 'comunidade', 'funcionalidades', 'passos'];
+          for (const sectionId of sections) {
+              const element = document.getElementById(sectionId);
+              if (element && scrollPos >= element.offsetTop - navHeight - 100) {
+                  setActiveLink(sectionId === 'hero' ? 'Home' : sectionId);
+              }
           }
           ticking = false;
         });
@@ -56,7 +66,13 @@ export const Navbar: React.FC = () => {
 
         {/* Logo */}
         <div className="flex items-center">
-          <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+          <div 
+            className="w-10 h-10 flex items-center justify-center overflow-hidden cursor-pointer"
+            onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setActiveLink('Home');
+            }}
+          >
             <img
               src={useDarkTheme ? logoBlack : logoWhite}
               alt="Logo"
@@ -75,21 +91,33 @@ export const Navbar: React.FC = () => {
               : 'bg-white/10 border-white/10 backdrop-blur-md'
           }`}
         >
-          {navLinks.map((item, idx) => (
+          {navLinks.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
-              className={`px-6 py-2 rounded-full text-[13px] font-bold ${
-                idx === 0
-                  ? useDarkTheme
-                    ? 'bg-black text-white'
-                    : 'bg-white text-black'
-                  : useDarkTheme
-                  ? 'text-black/60 hover:text-black'
-                  : 'text-white/60 hover:text-white'
+              href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
+              onClick={() => setActiveLink(item)}
+              className={`relative px-6 py-2 rounded-full text-[13px] font-bold transition-colors ${
+                  activeLink === item
+                    ? ''
+                    : useDarkTheme
+                    ? 'text-black/60 hover:text-black'
+                    : 'text-white/60 hover:text-white'
               }`}
             >
-              {item}
+              {activeLink === item && (
+                  <motion.div
+                      layoutId="navbar-active-pill"
+                      className={`absolute inset-0 rounded-full ${useDarkTheme ? 'bg-black' : 'bg-white'}`}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+              )}
+              <span className={`relative z-10 ${
+                  activeLink === item 
+                    ? useDarkTheme ? 'text-white' : 'text-black'
+                    : ''
+              }`}>
+                {item}
+              </span>
             </a>
           ))}
         </div>

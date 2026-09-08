@@ -13,6 +13,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
 }) => {
   return (
     <motion.button
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={`group flex items-center gap-3 p-1.5 pl-8 rounded-full shadow-xl ${
         dark

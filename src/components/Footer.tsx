@@ -9,7 +9,10 @@ export const Footer: React.FC = () => {
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-[2rem] mb-[2rem]">
           <div className="flex flex-col gap-[1.5rem] max-w-[20rem]">
-<div className="flex items-center gap-[0.75rem]">
+<div 
+  className="flex items-center gap-[0.75rem] cursor-pointer"
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
   <img src={logoPreta} alt="Logo Rota" className="w-[2.5rem] h-[2.5rem] object-contain" />
 </div>
 

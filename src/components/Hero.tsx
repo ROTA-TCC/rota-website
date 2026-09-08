@@ -5,7 +5,7 @@ import { AppButton } from './AppButton';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen w-full flex flex-col overflow-hidden">
+    <section id="hero" className="relative h-screen w-full flex flex-col overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
