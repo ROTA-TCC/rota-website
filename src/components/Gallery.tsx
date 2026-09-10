@@ -10,6 +10,21 @@ interface GalleryItem {
 
 const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 'bottom' | 'center' })[] = [
   {
+    image: "https://via.placeholder.com/300x400?text=New+Start+1",
+    size: 'md',
+    offset: 'top'
+  },
+  {
+    image: "https://via.placeholder.com/300x400?text=New+Start+2",
+    size: 'md',
+    offset: 'bottom'
+  },
+  {
+    image: "https://via.placeholder.com/300x400?text=New+Start+3",
+    size: 'md',
+    offset: 'center'
+  },
+  {
     image: "https://trilhandomontanhas.com/arquivos/2017-08/parque-natural-municipal-penhasco-dois-irmaos-rio-de-janeiro-maior.jpg",
     size: 'md',
     offset: 'top'
@@ -40,6 +55,21 @@ const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevjhhUrzMH6pfVSGx5_0g2RnJTyRbG8-B_DBEsg9DEbWgBSiBLOufpHg&s=10",
     size: 'md',
     offset: 'top'
+  },
+  {
+    image: "https://via.placeholder.com/300x400?text=New+End+1",
+    size: 'md',
+    offset: 'top'
+  },
+  {
+    image: "https://via.placeholder.com/300x400?text=New+End+2",
+    size: 'md',
+    offset: 'bottom'
+  },
+  {
+    image: "https://via.placeholder.com/300x400?text=New+End+3",
+    size: 'md',
+    offset: 'center'
   }
 ];
 
