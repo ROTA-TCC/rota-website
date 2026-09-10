@@ -10,17 +10,17 @@ interface GalleryItem {
 
 const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 'bottom' | 'center' })[] = [
   {
-    image: "/src/assets/gallery/Screenshot_20260909-132534.jpg",
+    image: "/gallery/Screenshot_20260909-132534.jpg",
     size: 'md',
     offset: 'top'
   },
   {
-    image: "/src/assets/gallery/images (4).jpeg",
+    image: "/gallery/images (4).jpeg",
     size: 'md',
     offset: 'bottom'
   },
   {
-    image: "/src/assets/gallery/Esculturas-de-orixas-do-Dique-do-Tororo.jpg",
+    image: "/gallery/Esculturas-de-orixas-do-Dique-do-Tororo.jpg",
     size: 'md',
     offset: 'center'
   },
@@ -57,17 +57,17 @@ const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 
     offset: 'top'
   },
   {
-    image: "/src/assets/gallery/images (3).jpeg",
+    image: "/gallery/images (3).jpeg",
     size: 'md',
     offset: 'top'
   },
   {
-    image: "/src/assets/gallery/images (2).jpeg",
+    image: "/gallery/images (2).jpeg",
     size: 'md',
     offset: 'bottom'
   },
   {
-    image: "/src/assets/gallery/images.jpeg",
+    image: "/gallery/images.jpeg",
     size: 'md',
     offset: 'center'
   }
