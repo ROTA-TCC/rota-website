@@ -46,6 +46,7 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
         <motion.div 
           className="w-full px-1"
           whileHover="hover"
+          whileTap="hover"
         >
           <div className="flex justify-between items-start mb-1">
             <h3 className="text-sm md:text-base font-semibold text-brand-black leading-tight">
