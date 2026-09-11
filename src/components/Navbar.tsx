@@ -221,13 +221,18 @@ export const Navbar: React.FC = () => {
                   <motion.a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick(item);
+                      setIsOpen(false);
+                    }}
+                    onContextMenu={(e) => e.preventDefault()}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + idx * 0.05 }}
                     className="group flex items-center justify-between py-2"
                   >
-                    <span className="text-5xl font-light tracking-tighter group-hover:pl-4 active:pl-4 transition-all duration-500 text-white">
+                    <span className="text-5xl font-light tracking-tighter group-hover:pl-4 active:pl-4 transition-all duration-500 text-white group-hover:text-white/80 active:text-white/80">
                       {item}
                     </span>
                     <div className="w-0 h-[1px] bg-white group-hover:w-12 active:w-12 transition-all duration-500 opacity-0 group-hover:opacity-100 active:opacity-100" />
@@ -257,9 +262,9 @@ export const Navbar: React.FC = () => {
                   </span>
 
                   <div className="flex items-center gap-8">
-                    <a href="#" className="text-white hover:text-white/60 transition-colors"><Facebook size={24} /></a>
-                    <a href="#" className="text-white hover:text-white/60 transition-colors"><Instagram size={24} /></a>
-                    <a href="#" className="text-white hover:text-white/60 transition-colors"><Twitter size={24} /></a>
+                    <a href="#" onContextMenu={(e) => e.preventDefault()} className="text-white hover:text-white/60 active:text-white/60 transition-colors"><Facebook size={24} /></a>
+                    <a href="#" onContextMenu={(e) => e.preventDefault()} className="text-white hover:text-white/60 active:text-white/60 transition-colors"><Instagram size={24} /></a>
+                    <a href="#" onContextMenu={(e) => e.preventDefault()} className="text-white hover:text-white/60 active:text-white/60 transition-colors"><Twitter size={24} /></a>
                   </div>
                 </motion.div>
 
