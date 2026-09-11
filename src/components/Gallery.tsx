@@ -163,7 +163,7 @@ export const Gallery = () => {
         className="flex items-center gap-4 md:gap-8"
         style={{ 
           transform: `translateX(${getOffset() + dragOffset}px)`,
-          transition: isDragging.current ? 'none' : 'transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1)',
+          transition: isDragging.current ? 'none' : 'transform 500ms ease-in-out',
           width: '100vw'
         }}
       >
