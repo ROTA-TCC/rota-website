@@ -25,34 +25,34 @@ const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 
     offset: 'center'
   },
   {
-    image: "https://trilhandomontanhas.com/arquivos/2017-08/parque-natural-municipal-penhasco-dois-irmaos-rio-de-janeiro-maior.jpg",
+    image: "/gallery/parque-penhasco-dois-irmaos.jpg",
     size: 'md',
     offset: 'top'
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbz6daGjbkolBnWfAKwsJ-7S2OwPEjyFSFiICyNhByTA&s=10",
+    image: "/gallery/imagem-google-1.jpg",
     size: 'md',
     offset: 'bottom'
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrVWVBKYBSnqyBhQB27jpksbazaOWTJgsP7M9L785XBrnxGggOMPMzI885&s=10",
+    image: "/gallery/imagem-google-2.jpg",
     size: 'md',
     offset: 'top'
   },
   {
-    image: "https://imgmd.net/images/c_limit%2Cw_1600/v1/guia/1583273/parque-da-independencia-ipiranga-173-4428-l.jpg",
+    image: "/gallery/parque-da-independencia.jpg",
     title: "Explore com o Rota!",
     description: "Por que correr sempre no mesmo lugar? novas rotas, novas memórias.",
     size: 'lg',
     offset: 'center'
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Caminho_ao_paraiso.JPG",
+    image: "/gallery/caminho-ao-paraiso.jpg",
     size: 'md',
     offset: 'center'
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevjhhUrzMH6pfVSGx5_0g2RnJTyRbG8-B_DBEsg9DEbWgBSiBLOufpHg&s=10",
+    image: "/gallery/imagem-google-3.jpg",
     size: 'md',
     offset: 'top'
   },
