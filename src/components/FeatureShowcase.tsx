@@ -4,10 +4,10 @@ import { FeaturePlayer } from './FeaturePlayer';
 import { FeatureButton } from './FeatureButton';
 import { motion } from 'motion/react';
 
-import gifAnalytics from '../assets/features/Showreel-Grid-Mobile.mp4';
-import gifCloud from '../assets/features/Apple-Event-Summary-Slide.mp4';
-import gifTeam from '../assets/features/Apple-Event-Title.gif';
-import gifSecurity from '../assets/features/16-9.mp4';
+const gifAnalytics = '/assets/features/Showreel-Grid-Mobile.mp4';
+const gifCloud = '/assets/features/Apple-Event-Summary-Slide.mp4';
+const gifTeam = '/assets/features/Apple-Event-Title.gif';
+const gifSecurity = '/assets/features/16-9.mp4';
 
 const FEATURES: Feature[] = [
   {

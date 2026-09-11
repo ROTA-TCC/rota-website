@@ -21,7 +21,7 @@ const stepsData = [
     number: 1,
     title: "Escolha o seu Objetivo",
     description: "Seja para o seu primeiro quilômetro ou para bater seu recorde na maratona.",
-    image: "https://thumbs.dreamstime.com/b/t%C3%AAnis-de-corrida-pretos-novos-na-estrada-asfaltada-no-tempo-de-manh%C3%A3-78131502.jpg?w=992"
+    image: "/steps/passo-1.jpg"
   },
   {
     number: 2,
@@ -33,7 +33,7 @@ const stepsData = [
     number: 3,
     title: "Dê o Primeiro Passo",
     description: "Monitore seu ritmo e evolução em tempo real sem complicação.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTYftpzmsomo2U5_Ceims5AWzSwC9uyzMhAosHNuc0pA&s=10"
+    image: "/steps/passo-3.jpg"
   },
   {
     number: 4,

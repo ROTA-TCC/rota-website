@@ -1,5 +1,5 @@
 import React from 'react';
-import logoPreta from '../assets/logo-preta.svg';
+import logoPreta from '/assets/logo-preta.svg';
 
 
 export const Footer: React.FC = () => {
@@ -27,18 +27,16 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col gap-[0.75rem]">
               <a href="#" className="transition-transform hover:scale-105">
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                  src="/assets/badges/app-store.svg" 
                   alt="Download on App Store" 
                   className="h-[2.5rem] w-auto"
-                  referrerPolicy="no-referrer"
                 />
               </a>
               <a href="#" className="transition-transform hover:scale-105">
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                  src="/assets/badges/google-play.svg" 
                   alt="Get it on Google Play" 
                   className="h-[2.5rem] w-auto"
-                  referrerPolicy="no-referrer"
                 />
               </a>
             </div>
@@ -60,18 +58,16 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col gap-[1rem]">
             <a href="#" className="transition-transform hover:scale-105">
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                src="/assets/badges/app-store.svg" 
                 alt="Download on App Store" 
                 className="h-[2.2rem] w-auto"
-                referrerPolicy="no-referrer"
               />
             </a>
             <a href="#" className="transition-transform hover:scale-105">
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                src="/assets/badges/google-play.svg" 
                 alt="Get it on Google Play" 
                 className="h-[2.2rem] w-auto"
-                referrerPolicy="no-referrer"
               />
             </a>
           </div>

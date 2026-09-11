@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
 import { ButtonBanner } from "./ButtonBanner";
-import bannerBackgroundImage from '../assets/full-shot-disabled-man-running.webp';
-
 export const Banner = () => {
+  const bannerBackgroundImage = '/assets/full-shot-disabled-man-running.webp';
   return (
     <section className="relative w-full h-[85vh] md:h-[90vh]">
       <div className="relative w-full h-full overflow-hidden rounded-[2.5rem] md:rounded-[2.5rem] shadow-2xl">
