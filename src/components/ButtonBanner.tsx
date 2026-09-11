@@ -28,7 +28,7 @@ export const ButtonBanner = ({ children, onClick, className = "" }: ButtonProps)
       {/* - bg-white -> bg-brand-primary
         - text-black-custom -> text-brand-black
       */}
-      <div className="flex items-center justify-center w-10 h-10 bg-brand-primary rounded-full text-brand-black transition-transform group-hover:rotate-45 shadow-sm">
+      <div className="flex items-center justify-center w-10 h-10 bg-brand-primary rounded-full text-brand-black transition-transform group-hover:rotate-45 group-active:rotate-45 shadow-sm">
         <ArrowUpRight size={20} strokeWidth={2.5} />
       </div>
     </motion.button>

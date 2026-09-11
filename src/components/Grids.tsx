@@ -16,8 +16,8 @@ const socialFeatures: SocialFeature[] = [
     title: "Desafios em Equipe",
     description: "Junte-se a amigos para bater metas coletivas e desbloquear conquistas exclusivas no app.",
     image: {
-      desktop: "/grids/premium_photo-1664297510120-354f5adbb9eb.jpeg",
-      mobile: "/grids/premium_photo-1664297510120-354f5adbb9eb.jpeg"
+      desktop: "/grids/desafios-equipe-desktop.jpg",
+      mobile: "/grids/desafios-equipe-mobile.jpg"
     }
   },
   {

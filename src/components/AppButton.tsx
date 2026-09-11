@@ -28,6 +28,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
 
       <motion.div
         whileHover={{ rotate: 45 }}
+        whileTap={{ rotate: 45 }}
         className={`w-12 h-12 rounded-full flex items-center justify-center ${
           dark
             ? "bg-white text-black"
