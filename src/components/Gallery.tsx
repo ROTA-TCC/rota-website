@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Card } from './Card';
 import { CarouselControls } from './CarouselControls';
 
@@ -75,6 +75,8 @@ const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 
 
 export const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(3); // Start on the one with text (Sea of Sand)
+  const isDragging = useRef(false);
+  const startX = useRef(0);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev > 0 ? prev - 1 : GALLERY_ITEMS.length - 1));
@@ -82,6 +84,24 @@ export const Gallery = () => {
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev < GALLERY_ITEMS.length - 1 ? prev + 1 : 0));
+  };
+
+  const handleDragStart = (clientX: number) => {
+    isDragging.current = true;
+    startX.current = clientX;
+  };
+
+  const handleDragEnd = (clientX: number) => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    const diff = clientX - startX.current;
+    const threshold = 50; // min pixels to swipe
+    
+    if (diff > threshold) {
+        handlePrev();
+    } else if (diff < -threshold) {
+        handleNext();
+    }
   };
 
   const progress = ((activeIndex + 1) / GALLERY_ITEMS.length) * 100;
@@ -109,7 +129,14 @@ export const Gallery = () => {
   };
 
   return (
-    <div className="w-[100vw] overflow-x-hidden pt-24 pb-32 mb-12">
+    <div 
+      className="w-[100vw] overflow-x-hidden pt-24 pb-32 mb-12 cursor-grab active:cursor-grabbing"
+      onMouseDown={(e) => handleDragStart(e.clientX)}
+      onMouseUp={(e) => handleDragEnd(e.clientX)}
+      onMouseLeave={() => isDragging.current = false}
+      onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
+      onTouchEnd={(e) => handleDragEnd(e.changedTouches[0].clientX)}
+    >
       <div 
         className="flex items-center gap-4 md:gap-8 transition-transform duration-700 ease-in-out"
         style={{ 
