@@ -103,12 +103,24 @@ export const Gallery = () => {
     setDragOffset(0);
     
     const diff = clientX - startX.current;
-    const threshold = 50; // min pixels to swipe
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
     
-    if (diff > threshold) {
-        handlePrev();
-    } else if (diff < -threshold) {
-        handleNext();
+    // Calculate average card width to determine how many items to skip
+    const avgCardWidth = isMobile ? 220 : 300; 
+    const gap = isMobile ? 16 : 32;
+    const itemWidth = avgCardWidth + gap;
+
+    // Number of items to jump
+    const itemsToJump = Math.round(Math.abs(diff) / itemWidth);
+    
+    if (itemsToJump > 0) {
+      if (diff > 0) {
+        // Dragging right -> Move prev
+        setActiveIndex((prev) => Math.max(0, prev - itemsToJump));
+      } else {
+        // Dragging left -> Move next
+        setActiveIndex((prev) => Math.min(GALLERY_ITEMS.length - 1, prev + itemsToJump));
+      }
     }
   };
 
