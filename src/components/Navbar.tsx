@@ -57,9 +57,18 @@ export const Navbar: React.FC = () => {
   
   const handleLinkClick = (item: string) => {
     isClickingRef.current = true;
+    
+    // Smoothly scroll to the element
+    const element = document.getElementById(item === 'Home' ? 'hero' : item.toLowerCase());
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Update active link after scroll animation likely finishes
     setTimeout(() => {
+        setActiveLink(item);
         isClickingRef.current = false;
-    }, 1000); // Wait for scroll animation to likely finish
+    }, 800); // Adjusted timing to match scroll duration
   };
   
   useEffect(() => {
