@@ -3,9 +3,6 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { AppButton } from './AppButton';
 
-import logoWhite from '/assets/logo-branca.svg';
-import logoBlack from '/assets/logo-preta.svg';
-
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
@@ -96,7 +93,7 @@ export const Navbar: React.FC = () => {
             }}
           >
             <img
-              src={useDarkTheme ? logoBlack : logoWhite}
+              src={useDarkTheme ? "/assets/logo-preta.svg" : "/assets/logo-branca.svg"}
               alt="Logo"
               className={`w-full h-full object-contain ${
                 isTransitioning ? 'brightness-0 invert' : ''
