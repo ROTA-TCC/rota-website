@@ -227,10 +227,10 @@ export const Navbar: React.FC = () => {
                     transition={{ delay: 0.1 + idx * 0.05 }}
                     className="group flex items-center justify-between py-2"
                   >
-                    <span className="text-5xl font-light tracking-tighter group-hover:pl-4 transition-all duration-500 text-white">
+                    <span className="text-5xl font-light tracking-tighter group-hover:pl-4 active:pl-4 transition-all duration-500 text-white">
                       {item}
                     </span>
-                    <div className="w-0 h-[1px] bg-white group-hover:w-12 transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                    <div className="w-0 h-[1px] bg-white group-hover:w-12 active:w-12 transition-all duration-500 opacity-0 group-hover:opacity-100 active:opacity-100" />
                   </motion.a>
                 ))}
               </div>
