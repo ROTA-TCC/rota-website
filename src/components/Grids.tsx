@@ -16,32 +16,32 @@ const socialFeatures: SocialFeature[] = [
     title: "Desafios em Equipe",
     description: "Junte-se a amigos para bater metas coletivas e desbloquear conquistas exclusivas no app.",
     image: {
-      desktop: "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?auto=format&fit=crop&q=80&w=1200",
-      mobile: "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?auto=format&fit=crop&q=80&w=600"
+      desktop: "/grids/desafios-equipe-desktop.jpg",
+      mobile: "/grids/desafios-equipe-mobile.jpg"
     }
   },
   {
     title: "Ranking Local",
     description: "Veja sua posição na sua cidade, celebre o progresso e motive-se com corredores do seu nível.",
     image: {
-      desktop: "https://images.unsplash.com/photo-1530143311094-34d807799e8f?auto=format&fit=crop&q=80&w=1200",
-      mobile: "https://images.unsplash.com/photo-1530143311094-34d807799e8f?auto=format&fit=crop&q=80&w=600"
+      desktop: "/grids/ranking-local-desktop.jpg",
+      mobile: "/grids/ranking-local-mobile.jpg"
     }
   },
   {
     title: "Clubes de Corrida",
     description: "Descubra grupos próximos a você, participe de treinos abertos e expanda sua rede de contatos.",
     image: {
-      desktop: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmIReLoElr2jfseDJoxJN_pIpmDAYs8O41eF355o5QTQ&s=10",
-      mobile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmIReLoElr2jfseDJoxJN_pIpmDAYs8O41eF355o5QTQ&s=10"
+      desktop: "/grids/clubes-corrida.jpg",
+      mobile: "/grids/clubes-corrida.jpg"
     }
   },
   {
     title: "Rotas Compartilhadas",
     description: "Mostre seus trajetos favoritos, troque dicas de percurso e inspire outros atletas da comunidade.",
     image: {
-      desktop: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9DIsSE48d5MWSdXdPczXRLENv8JtdrTs2hk1sj_-TA&s=10",
-      mobile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9DIsSE48d5MWSdXdPczXRLENv8JtdrTs2hk1sj_-TA&s=10"
+      desktop: "/grids/rotas-compartilhadas.jpg",
+      mobile: "/grids/rotas-compartilhadas.jpg"
     }
   }
 ];
@@ -82,10 +82,10 @@ function FeatureCard({ feature }: { feature: SocialFeature }) {
 export default function CommunityGrids({ 
   features = socialFeatures,
 }: { features?: SocialFeature[] }) {
-  // Imagem de destaque com URLs responsivas e testadas
+  // Imagem de destaque com URLs locais
   const featuredImage = {
-    desktop: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1200",
-    mobile: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=600"
+    desktop: "/grids/destaque-desktop.jpg",
+    mobile: "/grids/destaque-mobile.jpg"
   };
 
   return (
