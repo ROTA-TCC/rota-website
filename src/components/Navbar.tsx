@@ -235,7 +235,7 @@ export const Navbar: React.FC = () => {
                     <span className="text-5xl font-light tracking-tighter group-hover:pl-4 active:pl-4 transition-all duration-500 text-white group-hover:text-white/80 active:text-white/80">
                       {item}
                     </span>
-                    <div className="w-0 h-[1px] bg-white group-hover:w-12 active:w-12 transition-all duration-500 opacity-0 group-hover:opacity-100 active:opacity-100" />
+                    <div className="w-0 h-[1px] bg-white transition-all duration-500 opacity-0 group-hover:w-12 group-hover:opacity-100 active:w-12 active:opacity-100" />
                   </motion.a>
                 ))}
               </div>
