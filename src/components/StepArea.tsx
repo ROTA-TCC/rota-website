@@ -4,8 +4,8 @@ import { TourCard } from './TourCard';
 import { Tag } from './Tag';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import stepTwo from '../assets/modern-tokyo-street-background.webp';
-import stepFour from '../assets/7614.jpg';
+import stepTwo from '/assets/modern-tokyo-street-background.webp';
+import stepFour from '/assets/7614.jpg';
 
 const tags = [
   "Treinos",
