@@ -53,6 +53,7 @@ function FeatureCard({ feature }: { feature: SocialFeature }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 0.98 }}
       className="flex flex-col gap-3 cursor-pointer"
     >
       {/* Container Aspect-Square para um visual moderno e consistente */}
