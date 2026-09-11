@@ -9,10 +9,9 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1487956382158-bb926046304a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycmlkYSUyMGRvJTIwcGFycXVlfGVufDB8fDB8fHww" 
+          src="/hero/hero.jpg" 
           alt="Modern Architecture" 
           className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-zinc-950/90" />
       </div>

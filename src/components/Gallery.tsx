@@ -74,7 +74,7 @@ const GALLERY_ITEMS: (GalleryItem & { size: 'sm' | 'md' | 'lg'; offset: 'top' | 
 ];
 
 export const Gallery = () => {
-  const [activeIndex, setActiveIndex] = useState(3); // Start on the one with text (Sea of Sand)
+  const [activeIndex, setActiveIndex] = useState(6); // Start on the one with text (Sea of Sand)
   const isDragging = useRef(false);
   const startX = useRef(0);
 
