@@ -22,7 +22,7 @@ export const FeatureButton: React.FC<FeatureButtonProps> = ({ title, isActive, o
       {isActive && (
         <motion.div
           layoutId="activeTab"
-          className="absolute inset-0 bg-brand-primary border border-brand-stroke rounded-xl -z-10"
+          className="absolute inset-0 bg-brand-primary border border-brand-stroke rounded-xl shadow-sm -z-10"
           initial={false}
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
         />
