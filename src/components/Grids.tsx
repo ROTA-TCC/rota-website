@@ -16,32 +16,32 @@ const socialFeatures: SocialFeature[] = [
     title: "Desafios em Equipe",
     description: "Junte-se a amigos para bater metas coletivas e desbloquear conquistas exclusivas no app.",
     image: {
-      desktop: "/grids/desafios-equipe-desktop.jpg",
-      mobile: "/grids/desafios-equipe-mobile.jpg"
+      desktop: "/grids/fitsum-admasu-oGv9xIl7DkY-unsplash.webp",
+      mobile: "/grids/fitsum-admasu-oGv9xIl7DkY-unsplash.webp"
     }
   },
   {
     title: "Ranking Local",
     description: "Veja sua posição na sua cidade, celebre o progresso e motive-se com corredores do seu nível.",
     image: {
-      desktop: "/grids/ranking-local-desktop.jpg",
-      mobile: "/grids/ranking-local-mobile.jpg"
+      desktop: "/grids/istockphoto-2225250551-612x612.webp",
+      mobile: "/grids/istockphoto-2225250551-612x612.webp"
     }
   },
   {
     title: "Clubes de Corrida",
     description: "Descubra grupos próximos a você, participe de treinos abertos e expanda sua rede de contatos.",
     image: {
-      desktop: "/grids/clubes-corrida.jpg",
-      mobile: "/grids/clubes-corrida.jpg"
+      desktop: "/grids/chad-stembridge-ynym_ftLYdE-unsplash.webp",
+      mobile: "/grids/chad-stembridge-ynym_ftLYdE-unsplash.webp"
     }
   },
   {
     title: "Rotas Compartilhadas",
     description: "Mostre seus trajetos favoritos, troque dicas de percurso e inspire outros atletas da comunidade.",
     image: {
-      desktop: "/grids/rotas-compartilhadas.jpg",
-      mobile: "/grids/rotas-compartilhadas.jpg"
+      desktop: "/grids/couple-nature_compressed.webp",
+      mobile: "/grids/couple-nature_compressed.webp"
     }
   }
 ];
@@ -85,8 +85,8 @@ export default function CommunityGrids({
 }: { features?: SocialFeature[] }) {
   // Imagem de destaque com URLs locais
   const featuredImage = {
-    desktop: "/grids/destaque-desktop.jpg",
-    mobile: "/grids/destaque-mobile.jpg"
+    desktop: "/grids/premium_photo-1664297510120-354f5adbb9eb.webp",
+    mobile: "/grids/premium_photo-1664297510120-354f5adbb9eb.webp"
   };
 
   return (
