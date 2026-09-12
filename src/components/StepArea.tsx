@@ -4,8 +4,10 @@ import { TourCard } from './TourCard';
 import { Tag } from './Tag';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import stepTwo from '/steps/modern-tokyo-street-background.webp';
-import stepFour from '/steps/7614.jpg';
+import stepOne from '/steps/step-1.webp'
+import stepTwo from '/steps/step-2.webp'
+import stepTree from '/steps/step-3.webp';
+import stepFour from '/steps/step-4.webp';
 
 const tags = [
   "Treinos",
@@ -21,7 +23,7 @@ const stepsData = [
     number: 1,
     title: "Escolha o seu Objetivo",
     description: "Seja para o seu primeiro quilômetro ou para bater seu recorde na maratona.",
-    image: "/steps/passo-1.jpg"
+    image: stepOne
   },
   {
     number: 2,
@@ -33,7 +35,7 @@ const stepsData = [
     number: 3,
     title: "Dê o Primeiro Passo",
     description: "Monitore seu ritmo e evolução em tempo real sem complicação.",
-    image: "/steps/passo-3.jpg"
+    image: stepTree
   },
   {
     number: 4,
