@@ -78,6 +78,8 @@ export const Gallery = () => {
   const [dragOffset, setDragOffset] = useState(0);
   const isDragging = useRef(false);
   const startX = useRef(0);
+  const startY = useRef(0);
+  const isHorizontalDrag = useRef(false);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev > 0 ? prev - 1 : GALLERY_ITEMS.length - 1));
@@ -87,19 +89,41 @@ export const Gallery = () => {
     setActiveIndex((prev) => (prev < GALLERY_ITEMS.length - 1 ? prev + 1 : 0));
   };
 
-  const handleDragStart = (clientX: number) => {
+  const handleDragStart = (clientX: number, clientY: number) => {
     isDragging.current = true;
+    isHorizontalDrag.current = false;
     startX.current = clientX;
+    startY.current = clientY;
   };
 
-  const handleDragMove = (clientX: number) => {
+  const handleDragMove = (clientX: number, clientY: number) => {
     if (!isDragging.current) return;
-    setDragOffset(clientX - startX.current);
+    
+    const deltaX = clientX - startX.current;
+    const deltaY = clientY - startY.current;
+
+    // Check if we already determined this is a horizontal drag
+    if (!isHorizontalDrag.current) {
+        // If vertical movement is greater than horizontal, it's a scroll, ignore
+        if (Math.abs(deltaY) > Math.abs(deltaX)) {
+            isDragging.current = false;
+            return;
+        }
+        // If horizontal movement crosses a threshold, lock it as a horizontal drag
+        if (Math.abs(deltaX) > 10) {
+            isHorizontalDrag.current = true;
+        }
+    }
+
+    if (isHorizontalDrag.current) {
+        setDragOffset(deltaX);
+    }
   };
 
   const handleDragEnd = (clientX: number) => {
     if (!isDragging.current) return;
     isDragging.current = false;
+    isHorizontalDrag.current = false;
     setDragOffset(0);
     
     const diff = clientX - startX.current;
@@ -151,13 +175,13 @@ export const Gallery = () => {
   return (
     <div 
       className="w-[100vw] overflow-x-hidden pt-24 pb-32 mb-12 cursor-grab active:cursor-grabbing select-none"
-      onMouseDown={(e) => handleDragStart(e.clientX)}
+      onMouseDown={(e) => handleDragStart(e.clientX, e.clientY)}
       onMouseUp={(e) => handleDragEnd(e.clientX)}
-      onMouseMove={(e) => isDragging.current && handleDragMove(e.clientX)}
+      onMouseMove={(e) => isDragging.current && handleDragMove(e.clientX, e.clientY)}
       onMouseLeave={() => isDragging.current && handleDragEnd(e.clientX)}
-      onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
+      onTouchStart={(e) => handleDragStart(e.touches[0].clientX, e.touches[0].clientY)}
       onTouchEnd={(e) => handleDragEnd(e.changedTouches[0].clientX)}
-      onTouchMove={(e) => isDragging.current && handleDragMove(e.touches[0].clientX)}
+      onTouchMove={(e) => isDragging.current && handleDragMove(e.touches[0].clientX, e.touches[0].clientY)}
     >
       <div 
         className="flex items-center gap-4 md:gap-8"

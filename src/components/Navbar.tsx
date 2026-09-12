@@ -17,11 +17,6 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (isClickingRef.current) {
-            ticking = false;
-            return;
-          }
-          
           const scrollPos = window.scrollY;
           const heroElement = document.getElementById('hero');
           const navHeight = 80;
@@ -33,6 +28,11 @@ export const Navbar: React.FC = () => {
             setIsTransitioning(
               scrollPos > heroBottom - navHeight && scrollPos < heroBottom
             );
+          }
+          
+          if (isClickingRef.current) {
+            ticking = false;
+            return;
           }
           
           // Simple active link detection
