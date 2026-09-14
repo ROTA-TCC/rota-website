@@ -39,6 +39,7 @@ export const Card = ({ image, title, description, isActive, size = 'md', offset 
           alt={title || "Gallery image"} 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
+          draggable={false}
         />
       </div>
 
