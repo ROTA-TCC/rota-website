@@ -4,9 +4,9 @@ import { FeaturePlayer } from './FeaturePlayer';
 import { FeatureButton } from './FeatureButton';
 import { motion } from 'motion/react';
 
-const gifAnalytics = '/assets/features/Showreel-Grid-Mobile.mp4';
+const gifAnalytics = '/assets/features/feature-1.webm';
 const gifCloud = '/assets/features/Apple-Event-Summary-Slide.mp4';
-const gifTeam = '/assets/features/Apple-Event-Title.gif';
+const gifTeam = '/assets/features/Showreel-Grid-Mobile.mp4';
 const gifSecurity = '/assets/features/16-9.mp4';
 
 const FEATURES: Feature[] = [
