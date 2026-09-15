@@ -16,7 +16,7 @@ export const FeaturePlayer: React.FC<FeaturePlayerProps> = ({ mediaUrl }) => {
   }, [mediaUrl, isGif]);
 
   return (
-    <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-md">
+    <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-md bg-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={mediaUrl}
@@ -24,19 +24,19 @@ export const FeaturePlayer: React.FC<FeaturePlayerProps> = ({ mediaUrl }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="w-full h-full"
+          className="w-full h-full flex items-center justify-center"
         >
           {isGif ? (
             <img 
               src={mediaUrl} 
               alt="Feature preview" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           ) : (
             <video
               ref={videoRef}
               src={mediaUrl}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               loop
               muted
               autoPlay
