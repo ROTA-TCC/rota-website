@@ -4,31 +4,31 @@ import { FeaturePlayer } from './FeaturePlayer';
 import { FeatureButton } from './FeatureButton';
 import { motion } from 'motion/react';
 
-const gifAnalytics = '/assets/features/feature-1.webm';
-const gifCloud = '/assets/features/Apple-Event-Summary-Slide.mp4';
-const gifTeam = '/assets/features/Showreel-Grid-Mobile.mp4';
-const gifSecurity = '/assets/features/16-9.mp4';
+const gif_1 = '/assets/features/feature-1.webm';
+const gif_2 = '/assets/features/feature-2.webm';
+const gif_3 = '/assets/features/feature-3.webm';
+const gif_4 = '/assets/features/feature-4.webm';
 
 const FEATURES: Feature[] = [
   {
     id: '1',
-    title: 'rotas personalizadas',
-    mediaUrl: gifAnalytics,
+    title: 'transforma',
+    mediaUrl: gif_1,
   },
   {
     id: '2',
-    title: 'comunidade',
-    mediaUrl: gifCloud,
+    title: 'running',
+    mediaUrl: gif_2,
   },
   {
     id: '3',
     title: 'Corram juntos',
-    mediaUrl: gifTeam,
+    mediaUrl: gif_3,
   },
   {
     id: '4',
-    title: 'Segurança',
-    mediaUrl: gifSecurity,
+    title: 'telas',
+    mediaUrl: gif_4,
   },
 ];
 
